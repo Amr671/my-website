@@ -1,74 +1,172 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Animated Welcome & Professional Image</title>
-    <style>
-      body {
-        background: #f7f7f7;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        margin: 0;
-      }
-      .animated-welcome {
-        font-size: 2.2em;
-        color: #333;
-        font-weight: bold;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeUp 2s ease-out forwards;
-        margin-top: 60px;
-        margin-bottom: 40px;
-        text-shadow: 0 2px 10px #e0e0e0;
-      }
-      @keyframes fadeUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .img-container {
-        background: #fff;
-        padding: 22px 32px;
-        border-radius: 24px;
-        box-shadow: 0 8px 32px rgba(60,60,80,0.19), 0 1.5px 6px rgba(60,60,80,0.07);
-        display: inline-block;
-        transition: box-shadow 0.3s;
-        margin-bottom: 30px;
-      }
-      .img-container:hover {
-        box-shadow: 0 12px 48px rgba(40,82,120,0.22), 0 2px 10px rgba(40,82,120,0.09);
-      }
-      .pro-image {
-        max-width: 340px;
-        width: 100%;
-        display: block;
-        border-radius: 18px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.09);
-        transition: transform 0.3s;
-      }
-      .img-container:hover .pro-image {
-        transform: scale(1.04) rotate(-2deg);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="animated-welcome">Welcome want to buy something</div>
-    <div class="img-container">
-      <img class="pro-image" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&q=80" alt="Headphones Product">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Small Project Shop</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Header / Hero */
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(180deg, #111, #000);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, gold, black, gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeGlow 6s infinite;
+    }
+
+    @keyframes fadeGlow {
+      0%   { opacity: 0; text-shadow: 0 0 0 gold; }
+      20%  { opacity: 1; text-shadow: 0 0 15px gold; }
+      50%  { opacity: 1; text-shadow: 0 0 30px gold, 0 0 60px gold; }
+      70%  { opacity: 0; text-shadow: 0 0 10px gold; }
+      100% { opacity: 0; text-shadow: 0 0 0 gold; }
+    }
+
+    header p {
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    /* Categories */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #111;
+      padding: 15px;
+      border-top: 1px solid gold;
+      border-bottom: 1px solid gold;
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Product Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .product {
+      background: #111;
+      border: 2px solid gold;
+      border-radius: 12px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px gold;
+    }
+
+    .product h3 {
+      color: gold;
+      margin: 15px 0 10px;
+    }
+
+    .product p {
+      margin: 0;
+      color: #ccc;
+    }
+
+    .price {
+      color: gold;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      border-top: 1px solid gold;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Welcome To my Small Project</h1>
+    <p>Your trusted place for golden style & unique accessories</p>
+  </header>
+
+  <!-- Categories -->
+  <nav>
+    <a href="#">Rings</a>
+    <a href="#">Bracelets</a>
+    <a href="#">Necklaces</a>
+    <a href="#">Watches</a>
+    <a href="#">Custom Work</a>
+  </nav>
+
+  <!-- Product Grid -->
+  <section class="products">
+    <div class="product">
+      <h3>Gold Ring</h3>
+      <p>Elegant design with premium finish.</p>
+      <div class="price">EGP 450</div>
     </div>
-    <div class="img-container">
-      <img class="pro-image" src="https://share.google/images/tDbugbi4unTIs5ON6" alt="User Provided Product">
+    <div class="product">
+      <h3>Black Bracelet</h3>
+      <p>Perfect mix of simplicity and boldness.</p>
+      <div class="price">EGP 300</div>
     </div>
-    <div class="img-container">
-      <img class="pro-image" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Accessory Sunglasses">
+    <div class="product">
+      <h3>Golden Necklace</h3>
+      <p>Shines bright on every occasion.</p>
+      <div class="price">EGP 650</div>
     </div>
-    <div class="img-container">
-      <img class="pro-image" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Accessory Watch">
+    <div class="product">
+      <h3>Luxury Watch</h3>
+      <p>Modern, stylish, and timeless.</p>
+      <div class="price">EGP 700</div>
     </div>
-  </body>
+    <div class="product">
+      <h3>Custom Design</h3>
+      <p>Tailored to your imagination.</p>
+      <div class="price">EGP 500</div>
+    </div>
+    <div class="product">
+      <h3>Minimalist Ring</h3>
+      <p>Sleek and modern for daily wear.</p>
+      <div class="price">EGP 150</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 My Small Project | Designed with ❤ in Egypt
+  </footer>
+
+</body>
 </html>
