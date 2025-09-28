@@ -1,0 +1,168 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #111;
+  color: #FFD700; /* Gold accents */
+}
+
+/* Hero Section */
+.hero {
+  background-image: linear-gradient(135deg, #222, #444), url('https://www.transparenttextures.com/patterns/black-linen.png');
+  background-size: cover;
+  text-align: center;
+  padding: 150px 20px;
+  background-color: #111;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4em;
+  margin-bottom: 0.5em;
+  color: #FFD700;
+  letter-spacing: 3px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInSlideUp 1.8s ease-out forwards;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+  color: #F7E7CE;
+  font-weight: 500;
+}
+
+.btn {
+  background: linear-gradient(45deg, #FFD700, #FF8C00);
+  color: #111;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 2px solid #FFD700;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+  color: #111;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.5);
+}
+
+/* Search Bar Section */
+.search-section {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#searchBar {
+  padding: 12px;
+  font-size: 1.2em;
+  border-radius: 30px;
+  border: 2px solid #FFD700;
+  background-color: #222;
+  color: #FFD700;
+  width: 250px;
+  text-align: center;
+}
+
+#searchBar::placeholder {
+  color: #FFD700;
+  opacity: 0.8;
+}
+
+/* Product Section */
+.products {
+  padding: 80px 20px;
+  background-color: #111;
+}
+
+.products h2 {
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.product-card {
+  background-color: #222;
+  border: 2px solid #FFD700;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.product-card h3 {
+  font-size: 1.8em;
+  color: #FFD700;
+  margin-bottom: 15px;
+}
+
+.product-card p {
+  font-size: 1.2em;
+  color: #F7E7CE;
+  font-weight: 600;
+}
+
+/* Luxurious and Eye-Catching "Buy Now" Button */
+.buy-btn {
+  background: linear-gradient(135deg, #C33764, #1D2671);
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background-size: 200% auto;
+  background-position: right center;
+}
+
+.buy-btn:hover {
+  background-position: left center;
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(198, 55, 100, 0.6);
+}
+
+.buy-btn:active {
+  transform: scale(1);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #111;
+  color: #888;
+}
+
+/* Animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

@@ -3,170 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Small Project Shop</title>
+  <title>GoldenTouch Gems - Luxury Jewelry</title>
+
   <style>
     body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #111;
+      color: #FFD700;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
     }
 
-    /* Header / Hero */
+    /* Animations */
+    @keyframes glow {
+      0% { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; }
+      50% { text-shadow: 0 0 30px #FFD700, 0 0 50px #FFD700, 0 0 70px #FFD700; }
+      100% { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
     header {
       text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(180deg, #111, #000);
+      padding: 60px 20px;
+      color: #FFD700;
     }
 
     header h1 {
-      font-size: 3.5rem;
+      font-size: 3.5em;
+      text-transform: uppercase;
+      letter-spacing: 5px;
       font-weight: bold;
-      background: linear-gradient(45deg, gold, black, gold);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeGlow 6s infinite;
-    }
-
-    @keyframes fadeGlow {
-      0%   { opacity: 0; text-shadow: 0 0 0 gold; }
-      20%  { opacity: 1; text-shadow: 0 0 15px gold; }
-      50%  { opacity: 1; text-shadow: 0 0 30px gold, 0 0 60px gold; }
-      70%  { opacity: 0; text-shadow: 0 0 10px gold; }
-      100% { opacity: 0; text-shadow: 0 0 0 gold; }
+      animation: glow 3s ease-in-out infinite;
     }
 
     header p {
-      color: #ccc;
-      margin-top: 10px;
+      font-size: 1.5em;
+      animation: slideIn 2s ease-out;
     }
 
-    /* Categories */
-    nav {
+    .product-container {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      background: #111;
-      padding: 15px;
-      border-top: 1px solid gold;
-      border-bottom: 1px solid gold;
+      margin: 30px;
     }
 
-    nav a {
-      color: gold;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    /* Product Grid */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-
-    .product {
-      background: #111;
-      border: 2px solid gold;
-      border-radius: 12px;
-      text-align: center;
+    .product-card {
+      background-color: #222;
+      color: #FFD700;
+      width: 300px;
+      margin: 20px;
       padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
     }
 
-    .product:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 20px gold;
+    .product-card:hover {
+      transform: scale(1.05);
     }
 
-    .product h3 {
-      color: gold;
-      margin: 15px 0 10px;
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
 
-    .product p {
-      margin: 0;
-      color: #ccc;
+    .product-card h3 {
+      font-size: 1.8em;
+      margin-top: 15px;
     }
 
-    .price {
-      color: gold;
-      font-weight: bold;
-      font-size: 1.2rem;
+    .product-card p {
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background-color: #C33764;
+      color: white;
+      padding: 10px 20px;
       margin-top: 10px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background-color: #1D2671;
+      transform: scale(1.1);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #111;
-      border-top: 1px solid gold;
-      color: #ccc;
+      padding: 30px;
+      background-color: #111;
+      color: #888;
+    }
+
+    footer p {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #FFD700;
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Header Section -->
   <header>
-    <h1>Welcome To my Small Project</h1>
-    <p>Your trusted place for golden style & unique accessories</p>
+    <h1>GoldenTouch Gems</h1>
+    <p>Your source of luxury and elegance</p>
   </header>
 
-  <!-- Categories -->
-  <nav>
-    <a href="#">Rings</a>
-    <a href="#">Bracelets</a>
-    <a href="#">Necklaces</a>
-    <a href="#">Watches</a>
-    <a href="#">Custom Work</a>
-  </nav>
+  <!-- Product Cards Section -->
+  <div class="product-container">
 
-  <!-- Product Grid -->
-  <section class="products">
-    <div class="product">
-      <h3>Gold Ring</h3>
-      <p>Elegant design with premium finish.</p>
-      <div class="price">EGP 450</div>
+    <!-- 1. Gold Necklace -->
+    <div class="product-card">
+      <img src="https://www.avnisjewelry.com/cdn/shop/products/shell_necklace.jpg?v=1455614385&width=990" alt="Gold Necklace">
+      <h3>Gold Necklace</h3>
+      <p>Price: EGP 2,499.00</p>
+      <a href="gold-necklace.html" class="buy-btn">View Product</a>
     </div>
-    <div class="product">
-      <h3>Black Bracelet</h3>
-      <p>Perfect mix of simplicity and boldness.</p>
-      <div class="price">EGP 300</div>
-    </div>
-    <div class="product">
-      <h3>Golden Necklace</h3>
-      <p>Shines bright on every occasion.</p>
-      <div class="price">EGP 650</div>
-    </div>
-    <div class="product">
-      <h3>Luxury Watch</h3>
-      <p>Modern, stylish, and timeless.</p>
-      <div class="price">EGP 700</div>
-    </div>
-    <div class="product">
-      <h3>Custom Design</h3>
-      <p>Tailored to your imagination.</p>
-      <div class="price">EGP 500</div>
-    </div>
-    <div class="product">
-      <h3>Minimalist Ring</h3>
-      <p>Sleek and modern for daily wear.</p>
-      <div class="price">EGP 150</div>
-    </div>
-  </section>
 
-  <!-- Footer -->
+    <!-- 2. Diamond Necklace -->
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/36534869/r/il/d37cee/4752531133/il_1588xN.4752531133_377o.jpg" alt="Diamond Necklace">
+      <h3>Diamond Necklace</h3>
+      <p>Price: EGP 3,499.00</p>
+      <a href="diamond-necklace.html" class="buy-btn">View Product</a>
+    </div>
+
+    <!-- 3. Emerald Necklace -->
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/28732980/r/il/2c5e61/4600731079/il_1588xN.4600731079_atlk.jpg" alt="Emerald Necklace">
+      <h3>Emerald Necklace</h3>
+      <p>Price: EGP 2,199.00</p>
+      <a href="emerald-necklace.html" class="buy-btn">View Product</a>
+    </div>
+
+    <!-- 4. Sapphire Ring (Swapped with Diamond Ring) -->
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/9792770/r/il/9d9154/6971869344/il_1588xN.6971869344_tnyk.jpg" alt="Sapphire Ring">
+      <h3>Sapphire Ring</h3>
+      <p>Price: EGP 2,799.00</p>
+      <a href="sapphire-ring.html" class="buy-btn">View Product</a>
+    </div>
+
+    <!-- 5. Diamond Ring (Swapped Caption with Emerald Ring) -->
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/17210700/r/il/59fd59/5928272769/il_1588xN.5928272769_pj8p.jpg" alt="Diamond Ring">
+      <h3>Diamond Ring</h3>
+      <p>Price: EGP 2,199.00</p>
+      <a href="diamond-ring.html" class="buy-btn">View Product</a>
+    </div>
+
+  </div>
+
+  <!-- Footer Section -->
   <footer>
-    &copy; 2025 My Small Project | Designed with ❤ in Egypt
+    <p>Made with ❤ in Egypt</p>
   </footer>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
